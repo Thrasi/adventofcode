@@ -1,2 +1,0 @@
-depths = open("test-input.txt").read().split("\n")[:-1]
-print(depths)
