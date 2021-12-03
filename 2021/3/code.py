@@ -1,7 +1,7 @@
 from functools import reduce
 
 def get_inputs(file_name):
-    inputs = open("input.txt").read().split("\n")[:-1]
+    inputs = open(file_name).read().split("\n")[:-1]
     return [ list(map(int,[b for b in bits])) for bits in inputs ]
     
 def add_elementwise(l1, l2):
@@ -18,7 +18,10 @@ def get_least_common_bit_values(report):
 def filter_by_bits(report, bit_filter_func):
     report =  [i[:] for i in diagnostic_report]
     for i in range(len(report[0])):
+        #print(f"-------\niteration {i}")
+        #print(f"report: {report}")
         bit_filter_values = bit_filter_func(report)
+        #print(f"Bit filter:  {bit_filter_values}")
         report = [ number for number in report if number[i]==bit_filter_values[i]]
         if len(report)==1:
             break
