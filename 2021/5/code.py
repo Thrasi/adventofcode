@@ -10,7 +10,6 @@ def is_straight(segment):
 
 def get_points_in_segment(segment):
     points = set(map(str,segment))
-    dx = 1
     [[x1,y1],[x2,y2]] = segment
 
     while x1 != x2 or y1 != y2:
